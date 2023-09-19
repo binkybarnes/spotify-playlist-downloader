@@ -2,7 +2,7 @@ from pytube import YouTube
 import os
 
 
-def download_yt_mp3(url, destination):
+def download_yt_mp3(url, destination, confirmation=0):
 
     yt = YouTube(url)
 
@@ -12,17 +12,20 @@ def download_yt_mp3(url, destination):
     except pytube.exceptions.AgeRestrictedError as e:
         print("url: ", e)
 
-    # download file
+    # # download file
 
-    out_file = video.download(output_path=destination)
+    # out_file = video.download(output_path=destination)
 
-    # save file
-    base, ext = os.path.splitext(out_file)
-    new_file = base + '.mp3'
-    os.rename(out_file, new_file)
+    # # save file
+    # base, ext = os.path.splitext(out_file)
+    # new_file = base + '.mp3'
+    # os.rename(out_file, new_file)
 
-    print(f"\nDESTINATION FOLDER: {destination}")
-    print(f"╰─{yt.title} : DOWNLOADED ✅")
+    if confirmation:
+        print(f"\nDESTINATION FOLDER: {destination}")
+        print(f"╰─{yt.title} : DOWNLOADED ✅")
+
+    return yt.title
 
 
 def main():
