@@ -32,21 +32,22 @@ def get_auth_header(token):
     return {"Authorization": "Bearer " + token}
 
 
-def search_for_artist(token, artist_name):
-    url = "https://api.spotify.com/v1/search"
+def get_playlist_songnames(token, playlist_id):
+    url = "https://api.spotify.com/v1/playlists/"
     headers = get_auth_header(token)
-    query = f"?query=artist:{artist_name}&type=artist&limit=1"
 
-    query_url = url + query
+    query_url = url + playlist_id
     result = get(query_url, headers=headers)
     json_result = json.loads(result.content)
-    if len(json_result) == 0:
-        print("No artist found")
-        return None
 
-    return json_result
+    song_names = []
+    for item in json_result["tracks"]["items"]:
+        song_names.append(item["track"]["name"])
+
+    return song_names
 
 
 token = get_token()
-json_result = search_for_artist(token, "Haarper")
-print(json.dumps(json_result, indent=2))
+song_names = get_playlist_songnames(token, "2ol0oRkvlgpGo4BIewZ7e2")
+for name in (song_names):
+    print(name)
