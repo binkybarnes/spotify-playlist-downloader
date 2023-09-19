@@ -21,7 +21,8 @@ def download_yt_mp3(url, destination):
     new_file = base + '.mp3'
     os.rename(out_file, new_file)
 
-    print(f"{yt.title} has been downloaded in {destination}")
+    print(f"\nDESTINATION FOLDER: {destination}")
+    print(f"╰─{yt.title} : DOWNLOADED ✅")
 
 
 def main():
