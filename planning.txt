@@ -1,0 +1,22 @@
+download the video: (can you download with yt api?)
+
+path to name:
+name <--album <-- track <-- items[] <-- tracks
+
+DRIP TOO HARD (Remix)
+QUANTUM IMMORTALITY
+Harder Than Ever
+Fast & Furious: Drift Tape (Phonk Vol 1)
+Ghosts
+Spin The Globe
+Toji UK Drill (Jujutsu Kaisen Gojo Uk Drill)
+London Bridge (Jack The Ripper)
+
+
+
+path to yt id:
+videoId << id << items[]
+
+
+todo: have the songs download into a new directory that has the name of the spotify playlist
+todo: improve search query with artist name
