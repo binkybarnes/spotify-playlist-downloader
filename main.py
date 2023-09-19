@@ -40,12 +40,23 @@ def get_playlist_songnames(token, playlist_id):
     result = get(query_url, headers=headers)
     json_result = json.loads(result.content)
 
-    return json_result
+    song_names = []
+    for item in json_result["tracks"]["items"]:
+        song_names.append(item["track"]["album"]["name"])
+
+    return song_names
 
 
 token = get_token()
-json_result = get_playlist_songnames(token, "2ol0oRkvlgpGo4BIewZ7e2")
+song_names = get_playlist_songnames(token, "2ol0oRkvlgpGo4BIewZ7e2")
+for name in (song_names):
+    print(name)
 
-file = open("output.json", "w")
-file.write(json.dumps(json_result, indent=2))
-file.close()
+# file = open("output1.json", "w")
+# file.write(json.dumps(extracted, indent=2))
+# file.close()
+
+
+# file = open("output.json", "w")
+# file.write(json.dumps(json_result, indent=2))
+# file.close()
