@@ -1,4 +1,4 @@
-#!/Users/johnpork/Desktop/python-stuff/webscraping/spotify-downloader/venv/bin/python3.11
+#!/Users/johnpork/Desktop/python-stuff/webscraping/spotify-playlist-downloader/venv/bin/python3.11
 # -*- coding: utf-8 -*-
 import re
 import sys

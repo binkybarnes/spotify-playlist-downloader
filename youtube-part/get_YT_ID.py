@@ -7,7 +7,7 @@ import os
 import json
 
 
-def get_YtId(YT_API_KEY, vid_name):
+def get_video_id(YT_API_KEY, vid_name):
     """Input video name, gets video id. 
     Append id at end of https://www.youtube.com/watch?v= for url
     """
@@ -34,6 +34,6 @@ def get_YtId(YT_API_KEY, vid_name):
 
 load_dotenv()
 yt_ApiKey = os.getenv("YT_API_KEY")
-yt_id = get_YtId(yt_ApiKey, "CALMNNESS")
+yt_id = get_video_id(yt_ApiKey, "CALMNNESS")
 
 print(f"https://www.youtube.com/watch?v={yt_id}")
